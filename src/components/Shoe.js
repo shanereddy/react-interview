@@ -1,8 +1,12 @@
 import React from 'react';
 
 const Shoe = (props) => (
-  <div>
-    Shoe
+  <div className='card'>
+    <div className='container'>
+      <p>{props.brand} > {props.name}</p>
+      <p>{props.price.toFixed(2)}</p>
+      <a onClick={() => props.onShoeSelect(props)}>Add to Cart</a>
+    </div>
   </div>
 );
 

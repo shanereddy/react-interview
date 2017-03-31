@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 /**
  * Given some array:
  *    [
@@ -17,5 +19,9 @@
  * @param key A string of the object property
  */
 export function countByKey (arr, key) {
+  const newArr = [];
+  const result = _.countBy(arr, (item) => { return item.brand; });
+  Object.keys(result).forEach((key) => {newArr.push({brand: key, count: result[key]})});
 
+  return newArr;
 }
